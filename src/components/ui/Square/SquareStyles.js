@@ -34,10 +34,6 @@ export const StyledSquare = styled.div`
     ) rotate(45deg)
   `};
 
-  &:hover {
-    opacity: ${props => props.depth > 0 ? 0.9 : 0.1};
-  }
-
   @media (max-width:980px) {
     width: ${props => `${props.size / 2}px`};
     height: ${props => `${props.size / 2}px`};

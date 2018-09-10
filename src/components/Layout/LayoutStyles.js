@@ -11,6 +11,10 @@ injectGlobal`
     font-weight: 400;
     font-style: normal;
   }
+  
+  * {
+    transform-style: preserve-3d;
+  }
 
   body {
     margin: 0;
