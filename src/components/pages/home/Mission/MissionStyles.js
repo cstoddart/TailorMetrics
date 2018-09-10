@@ -59,7 +59,7 @@ export const MissionSquare2 = styled.div`
 
   @media (max-width:980px) {
     bottom: 50px;
-    left: 200px;
+    left: 175px;
   }
 `;
 
