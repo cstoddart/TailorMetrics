@@ -32,10 +32,14 @@ export class Square extends Component {
           depth={this.props.depth}
           offset={this.state.centerOffset}
         >
-          <Top size={this.props.size} />
-          <Left size={this.props.size} />
-          <Right size={this.props.size} />
-          <Bottom size={this.props.size} />
+          {this.props.depth > 1 && 
+            <>
+              <Top size={this.props.size} />
+              <Left size={this.props.size} />
+              <Right size={this.props.size} />
+              <Bottom size={this.props.size} />
+            </>
+          }
           <StyledSquare
             className="square"
             size={this.props.size}

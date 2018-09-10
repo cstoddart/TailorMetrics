@@ -12,7 +12,7 @@ export const SquareContainer = styled.div`
     translateX(${-1 * (props.depth / PERSPECTIVE) * props.offset}px)
     scale(${-1 * props.depth / PERSPECTIVE + 1})
     rotate(45deg)
-  `};
+    `};
 
   @media (max-width:980px) {
     width: ${props => `${props.size / 2}px`};
@@ -29,6 +29,7 @@ export const StyledSquare = styled.div`
   width: ${props => `${props.size}px`};
   height: ${props => `${props.size}px`};
   border-radius: ${props => `${(props.size / 8) + 15}px`};
+  z-index: ${props => props.depth < 1 && '-500'};
   box-shadow: ${props => `
     5px 5px 75px 0 ${(props.color === 'blue' && `${BLUE}77`) ||
     (props.color === 'green' && `${GREEN}55`)}

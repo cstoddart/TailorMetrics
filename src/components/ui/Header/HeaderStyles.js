@@ -7,6 +7,8 @@ export const StyledHeader = Row.extend`
   margin-bottom: 50px;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 500;
 `;
 
 export const Logo = styled.h1`
