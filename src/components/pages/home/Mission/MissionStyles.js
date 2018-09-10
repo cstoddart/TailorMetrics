@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { BLUE } from '../../../../constants';
-import { Row, Column, Button } from '../../../ui';
+import { Row, Column } from '../../../ui';
 
 export const MissionRow = Row.extend`
   height: 650px;
@@ -42,12 +42,7 @@ export const MissionSquare1 = styled.div`
   bottom: 75px;
   left: -100px;
   z-index: 1;
-  transform: translateZ(60px) scale(0.8);
   transition: 1s ease;
-
-  &:hover {
-    transform: translateZ(60px) scale(0.8) translateY(-10px);
-  }
 
   @media (max-width:980px) {
     bottom: 50px;
@@ -57,15 +52,10 @@ export const MissionSquare1 = styled.div`
 
 export const MissionSquare2 = styled.div`
   position: absolute;
-  bottom: 75px;
-  left: 200px;
+  bottom: 60px;
+  left: 250px;
   z-index: 2;
-  transform: translateZ(90px) scale(0.7);
   transition: 1s ease;
-
-  &:hover {
-    transform: translateZ(90px) scale(0.7) translatex(-15px);
-  }
 
   @media (max-width:980px) {
     bottom: 50px;
@@ -94,16 +84,11 @@ export const MissionDetails = styled.p`
   margin-bottom: 35px;
 `;
 
-export const MissionButton = styled(Button)`
-`;
-
 export const MissionBackgroundSquare = styled.div`
   position: absolute;
-  bottom: -375px;
-  right: -625px;
-  opacity: 0.1;
+  bottom: -400px;
+  right: -450px;
   z-index: -2;
-  transform: translateZ(-60px) scale(1.2);
 
   @media (max-width: 980px) {
     bottom: -250px;

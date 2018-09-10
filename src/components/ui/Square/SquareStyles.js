@@ -3,9 +3,17 @@ import styled from 'styled-components';
 import { PERSPECTIVE, BLUE, GREEN } from '../../../constants';
 
 export const StyledSquare = styled.div`
-  transform: rotate(45deg);
+  display: inline-block;
+  transition: 1s ease;
+  overflow: hidden;
+  opacity: ${props => props.depth > 0 ? 1 : 0.1};
   width: ${props => `${props.size}px`};
   height: ${props => `${props.size}px`};
+  border-radius: ${props => `${(props.size / 8) + 15}px`};
+  box-shadow: ${props => `
+    5px 5px 75px 0 ${(props.color === 'blue' && `${BLUE}77`) ||
+    (props.color === 'green' && `${GREEN}55`)}
+  `};
   background: ${props => `
     linear-gradient(
       to ${props.direction},
@@ -15,32 +23,25 @@ export const StyledSquare = styled.div`
       (props.color === 'green' && `${GREEN}00`)}
     )
   `};
-  border-radius: ${props => `${(props.size / 8) + 15}px`};
-  overflow: hidden;
-  display: inline-block;
-  box-shadow: ${props => `
-    5px 5px 75px 0 ${(props.color === 'blue' && `${BLUE}77`) ||
-    (props.color === 'green' && `${GREEN}55`)}
-    `};
-  opacity: 1;
-  transition: 1s ease;
+  transform: rotate(45deg);
   transform: ${props => `
-    translateZ(${
-      props.depth
-    }px) translateX(${
-      (props.depth / PERSPECTIVE) * props.offset
-    }px) scale(${
-      -1 * props.depth / PERSPECTIVE + 1
-    }) rotate(45deg)`};
+    translateZ(
+      ${props.depth}px
+    ) translateX(
+      ${-1 * (props.depth / PERSPECTIVE) * props.offset}px
+    ) scale(
+      ${-1 * props.depth / PERSPECTIVE + 1}
+    ) rotate(45deg)
+  `};
 
   &:hover {
-    opacity: 0.9;
+    opacity: ${props => props.depth > 0 ? 0.9 : 0.1};
   }
 
   @media (max-width:980px) {
     width: ${props => `${props.size / 2}px`};
     height: ${props => `${props.size / 2}px`};
-    border-radius: ${props => `${(props.size / 16) + 15}px`};
+    border-radius: ${props => `${(props.size / 16) + 10}px`};
   }
 `;
 

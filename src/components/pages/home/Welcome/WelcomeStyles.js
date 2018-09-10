@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Row, Column, Button } from '../../../ui';
+import { Row, Column } from '../../../ui';
 
 export const WelcomeRow = Row.extend`
   height: 650px;
@@ -49,16 +49,11 @@ export const WelcomeDetails = styled.p`
   margin-bottom: 35px;
 `;
 
-export const WelcomeButton = styled(Button)`
-`;
-
 export const WelcomeBackgroundSquare = styled.div`
   position: absolute;
   bottom: 300px;
-  left: -470px;
-  opacity: 0.1;
+  left: -400px;
   z-index: -2;
-  transform: translateZ(-60px) scale(1.2);
 
   @media (max-width: 980px) {
     bottom: 50px;
@@ -67,15 +62,10 @@ export const WelcomeBackgroundSquare = styled.div`
 `;
 
 export const WelcomeSquare1 = styled.div`
-  /* position: absolute; */
+  position: absolute;
   bottom: 100px;
   right: -100px;
-  /* transform: translateZ(60px) scale(0.8); */
   transition: 1s ease;
-
-  &:hover {
-    /* transform: translateZ(60px) scale(0.8) translateY(-10px); */
-  }
 
   @media (max-width: 980px) {
     right: 0;
@@ -86,13 +76,8 @@ export const WelcomeSquare1 = styled.div`
 export const WelcomeSquare2 = styled.div`
   position: absolute;
   bottom: 50px;
-  right: 275px;
-  transform: translateZ(90px) scale(0.7);
+  right: 300px;
   transition: 1s ease;
-
-  &:hover {
-    transform: translateZ(90px) scale(0.7) translateX(15px);
-  }
 
   @media (max-width: 980px) {
     right: 175px;

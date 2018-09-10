@@ -7,12 +7,11 @@ import {
   WelcomeContent,
   WelcomeTitle,
   WelcomeDetails,
-  WelcomeButton,
   WelcomeSquare1,
   WelcomeSquare2,
   WelcomeBackgroundSquare,
 } from './WelcomeStyles';
-import { Square } from '../../../ui';
+import { Square, Button } from '../../../ui';
 import mannequin from '../../../../assets/images/mannequin.png';
 
 export const Welcome = () => (
@@ -23,12 +22,13 @@ export const Welcome = () => (
           size={1000}
           direction="top"
           color="blue"
-          />
+          depth={-60}
+        />
       </WelcomeBackgroundSquare>
       <WelcomeContent>
         <WelcomeTitle>The Right Size Every Time</WelcomeTitle>
         <WelcomeDetails>TailorMetrics offers professional clothing sizing services for retailers & manufacturers. With consistent sizing across multiple brands, your customers will pick the perfect size every time.</WelcomeDetails>
-        <WelcomeButton targetId="how-it-works" direction="right" color="green" text="How It Works">How It Works</WelcomeButton>
+        <Button targetId="how-it-works" direction="right" color="green" text="How It Works">How It Works</Button>
       </WelcomeContent>
     </WelcomeColumn1>
     <WelcomeColumn2 width={50}>
@@ -46,6 +46,7 @@ export const Welcome = () => (
           size={200}
           direction="top"
           color="green"
+          depth={90}
         />
       </WelcomeSquare2>
     </WelcomeColumn2>

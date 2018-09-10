@@ -3,17 +3,12 @@ import PropTypes from 'prop-types';
 
 import { distanceFromCenter } from '../../../utilities';
 import { StyledSquare, MaskedImage } from './SquareStyles';
-import { defaultCipherList } from 'constants';
 
 export class Square extends Component {
-  constructor() {
-    super();
-    
-    this.squareRef = createRef();
-    this.state = {
-      centerOffset: 0,
-    };
-  }
+  squareRef = createRef();
+  state = {
+    centerOffset: 0,
+  };
 
   componentDidMount() {
     this.setState({
@@ -22,9 +17,7 @@ export class Square extends Component {
   }
 
   render() {
-    console.log('CO', this.state.centerOffset);
     return (
-      // <Container size={props.size}>
       <div ref={this.squareRef}>
         <StyledSquare
           size={this.props.size}
@@ -41,7 +34,6 @@ export class Square extends Component {
           }
         </StyledSquare>
       </div>
-      // </Container>
     );
   } 
 }
